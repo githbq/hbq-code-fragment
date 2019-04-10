@@ -1,7 +1,7 @@
 const http = require('http')
 const fs = require('fs')
 const path = require('path')
-const { version } = require('../../package.json')
+const { version } = require('../package.json')
 
 const port = parseInt(process.argv[2] || '9000')
 const mimeType = {

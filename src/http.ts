@@ -16,11 +16,11 @@ http.createServer((req, res) => {
   if (req.url === '/') {
     pathname = 'index.html'
   } else if (req.url === '/sdk.js') {
-    pathname = path.resolve(__dirname, `../dist/zpfe-exp-web-sdk-${version}.js`)
+    pathname = path.resolve(__dirname, `../dist/xxx.js`)
   } else if (req.url === '/style.css') {
     pathname = 'style.css'
   } else if (req.url.includes('/api')) {
-    res.write('{"variables":{"var1":"blue","var2":"red"}}')
+    res.write('{"a":1,"b":2}')
     res.end()
 
     return

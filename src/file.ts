@@ -34,7 +34,9 @@ class DateArticle {
     }
 
   }
-
+  if (dateArticle) {
+    dateArticle.title += ' 文章推荐(' + dateArticle.articles.filter(n => n.indexOf('http') !== -1).length + '篇)'
+  }
   function toMd() {
     const strs = []
     dateArticles.forEach(n => {

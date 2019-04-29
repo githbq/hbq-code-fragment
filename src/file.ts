@@ -16,10 +16,10 @@ class DateArticle {
   for (const line of lines) {
     if (/^\s*\d+\s*$/.test(line)) {
       if (dateArticle) {
-        dateArticle.title += '文章推荐  (' + dateArticle.articles.filter(n => n.indexOf('http') !== -1).length + '篇)'
+        dateArticle.title += ' 文章推荐(' + dateArticle.articles.filter(n => n.indexOf('http') !== -1).length + '篇)'
       }
       dateArticle = new DateArticle()
-      dateArticle.title = '# ' + line
+      dateArticle.title = '# ' + line.slice(0, 4) + '-' + line.slice(4, 6) + '-' + line.slice(6)
       dateArticle.articles = []
       dateArticles.push(dateArticle)
     } else if (line && !/^\s*$/.test(line)) {

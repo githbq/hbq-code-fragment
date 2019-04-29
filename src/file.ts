@@ -16,7 +16,7 @@ class DateArticle {
   for (const line of lines) {
     if (/^\s*\d+\s*$/.test(line)) {
       if (dateArticle) {
-        dateArticle.title += ' 文章推荐(' + dateArticle.articles.filter(n => n.indexOf('http') !== -1).length + '篇)'
+        dateArticle.title += ' 文章推荐 (' + dateArticle.articles.filter(n => n.indexOf('http') !== -1).length + '篇)'
       }
       dateArticle = new DateArticle()
       dateArticle.title = '# ' + line.slice(0, 4) + '-' + line.slice(4, 6) + '-' + line.slice(6)
@@ -35,7 +35,7 @@ class DateArticle {
 
   }
   if (dateArticle) {
-    dateArticle.title += ' 文章推荐(' + dateArticle.articles.filter(n => n.indexOf('http') !== -1).length + '篇)'
+    dateArticle.title += ' 文章推荐 (' + dateArticle.articles.filter(n => n.indexOf('http') !== -1).length + '篇)'
   }
   function toMd() {
     const strs = []
@@ -48,7 +48,7 @@ class DateArticle {
     })
     return strs.join('\n')
   }
-
+  console.log('共' + dateArticles.length + '天')
   fs.writeFileAsync(path.join(cwd, 'articles.md'), toMd())
 })()
 

@@ -13,7 +13,10 @@
         "p": "npm run tsc && npm publish",
         "lint": "tslint \"src/**/*.ts\""
     },
-    "dependencies": {"tslib": "^1.6.1"},
+    "dependencies": {
+        "fs-extra-promise": "^1.0.1",
+        "tslib": "^1.6.1"
+    },
     "devDependencies": {
         "@types/mocha": "^2.2.41",
         "@types/node": "^6.0.48",
@@ -31,6 +34,8 @@
     ],
     "author": "hubiqing",
     "repository": "https://github.com/githbq/hbq-module-boilerplate.git",
-    "engines": {"node": ">=7.6"},
+    "engines": {
+        "node": ">=7.6"
+    },
     "license": "MIT"
 }

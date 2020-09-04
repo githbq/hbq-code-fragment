@@ -14,4 +14,6 @@ function deepClone(obj) {
   return copy
 }
  
+ 2. 
+ const deepCopy = o => typeof o !== 'object' ? o : Object.keys(o).reduce((obj, key) => (obj[key] = deepCopy(o[key])) && obj, Array.isArray(o) ? [] : {});
 ```
